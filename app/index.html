@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vice City Cover Maker</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h1>VICE CITY<br>COVER MAKER</h1>
+    <p class="tagline">Your photo, poster-style. Three steps to a PNG.</p>
+
+    <fieldset>
+      <legend>1 · Photo</legend>
+      <label class="upload">Add your photos
+        <input id="photos" type="file" accept="image/*" multiple>
+      </label>
+      <div class="samples" id="samples">
+        <button type="button" data-sample="pier">Pier</button>
+        <button type="button" data-sample="boulevard">Boulevard</button>
+      </div>
+      <label class="check"><input id="onePhoto" type="checkbox" checked> One photo fills every panel</label>
+      <p class="hint">Photos stay on your machine — nothing is uploaded.</p>
+    </fieldset>
+
+    <fieldset>
+      <legend>2 · Caption</legend>
+      <label>Title <input id="title" type="text" maxlength="30" value="Sunset Heist"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="40" value="Vice City Nights"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3 · Look</legend>
+      <div class="row" id="layouts" role="group" aria-label="Layout">
+        <button type="button" data-layout="poster" class="on">Poster</button>
+        <button type="button" data-layout="strip">Strip</button>
+        <button type="button" data-layout="hero">Hero</button>
+      </div>
+      <div class="row" id="grades" role="group" aria-label="Colour grade">
+        <button type="button" data-grade="sunset" class="on">Sunset</button>
+        <button type="button" data-grade="neon">Neon</button>
+        <button type="button" data-grade="mono">Mono</button>
+        <button type="button" data-grade="halftone">Halftone</button>
+      </div>
+      <div class="row" id="sizes" role="group" aria-label="Post size">
+        <button type="button" data-size="1080x1080">Square</button>
+        <button type="button" data-size="1080x1350">Portrait</button>
+        <button type="button" data-size="1920x1080" class="on">Wide</button>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Panel crop</legend>
+      <p class="hint">Click a panel on the cover, then zoom and slide it.</p>
+      <label>Zoom <input id="zoom" type="range" min="100" max="220" value="100"></label>
+      <label>Slide <input id="pan" type="range" min="-50" max="50" value="0"></label>
+      <p class="hint" id="panelLabel">Panel 1 of 3</p>
+    </fieldset>
+
+    <button id="export" type="button">Export PNG</button>
+    <p id="status" role="status"></p>
+  </section>
+
+  <section class="stage" aria-label="Cover preview">
+    <canvas id="cover" width="1920" height="1080"></canvas>
+    <img id="exportImg" alt="Exported cover">
+    <p class="stage-hint">Live preview — click any panel to crop it.</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
