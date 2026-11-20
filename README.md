@@ -39,3 +39,11 @@ mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
 This writes `out/app/`, `out/screenshots/` and `out/dossier.json`.
+
+## Donate
+
+If you enjoy this project, you can support it with a crypto donation:
+
+[Donate SOL / USDT (Solana)](solana:DQM8neQdx1rnCTsjQDJEj2gNrXjYoewkcVdvptoqm3c3?label=Donate)
+
+Or send to this address: `DQM8neQdx1rnCTsjQDJEj2gNrXjYoewkcVdvptoqm3c3`
